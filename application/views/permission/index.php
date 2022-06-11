@@ -26,14 +26,12 @@
             </div>
                 <thead class=" ">
                     <tr  class=" text-center ">
-                        <th class="border ">ID</th>
                         <th class="border ">Permission Name</th>
                         <th class="border ">Permission Discription</th>
                         <th class="border ">Action</th>
                     </tr>
                     <?php  if(!empty($permiss)): foreach($permiss as $perm):?>   
                     <tr class=''>
-                        <td class="border "><?php  echo $perm['id'];?></td>
                         <td class="border "><?php echo $perm['name'];?></td>
                         <td class="border "><?php echo $perm['description'];?></td>
                         <td class="border text-center">

@@ -20,6 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             }
         	}
 
+
 		// insert post
 		function addRole($data){
 			$query="INSERT INTO `groups`(`name`, `description`) VALUES (?,?)";
@@ -29,7 +30,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				return $this->db->insert_id();
 			} 
 		}
-
+		public function addPermission($perm_role){
+			$this->db->insert('permission_role',$perm_role);
+		}
 		// update post 
 		public function update($data, $id){
 		
@@ -48,13 +51,45 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			return $delete ? true : false;	 
 	 
 		}
-         	public function updateRole(){
-			$this->db->where('id',$this->input->post('role_id'));
-			$this->db->update('groups',['name' => $this->input->post('name')]);
+
+         	public function updateRole($role_id,$permission_id){
+			$this->db->where('id',$role_id);
+			$this->db->update('groups',['name' => $this->input->post('name'),'description' => $this->input->post('description')]);
+			
+			$this->db->where('group_id',$role_id);
+			$this->db->update('permission_role',$permission_id);
 	     }
 
+		public function getRoles($id)
+		{
+			// $this->db->select('g.id as group_id,g.name as group_name,g.description as g_description,pr.permission_id,p.name as permission_name');
+			// $this->db->from('groups g');
+			// $this->db->join('permission_role pr','g.id = pr.group_id');
+			// $this->db->join('permissions p','p.id = pr.permission_id');
+			// $this->db->where('g.id',$id);
+			// $query = $this->db->get();
+			// return $query->result();
+			$this->db->select("g.id, g.name, g.description, pr.permission_id as check");
+			$this->db->from("groups as g");
+			$this->db->join('permission_role as pr', 'g.id = pr.group_id', 'left');
+			$this->db->where("g.id",$id);
+			$query = $this->db->get();
+			return $query->row();
+		}
 
 	
+		public function getAllPermissions(){
+			
+			$sql = "SELECT * FROM permissions";
+			$query  = $this->db->query($sql);
+				$result = $query->result(); 
+				return $result;
+
+		}
+
+
+
+
 		// function getUserPermissions($id) 
 		// {
 		// 	// $sql    = " SELECT p.name,pr.id AS per_id,u.username,u.id AS userid 

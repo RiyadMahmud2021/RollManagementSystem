@@ -11,12 +11,13 @@ $this->load->view('layout/header');?>
 ?>
     <div class="container">
 
-            <form action="<?php echo base_url('groups/edit'); ?>" method="POST" class="form">
+            <form action="<?php echo base_url('groups/edit'); ?>" method="POST" class="form"> 
+            <!-- <?php //echo base_url('groups/edit/'.$roles['id']); ?> -->
                 <input type="hidden" name="role_id" value="<?php echo $roles->id;?>">
                 Name: <input class='form-control' type="text" name="name" value="<?php echo $roles->name; ?>"> 
                                        
                 <br/>  <br/>
-                Description: <input class='form-control' type="text" name="description">
+                Description: <input class='form-control' type="text" name="description" value="<?php echo $roles->description; ?> ">
                
                 <br/>  <br/>
 
@@ -30,31 +31,16 @@ $this->load->view('layout/header');?>
              <div class="row">
                   <?php 
                   $check = explode('-',$roles->check);
-                  $count = count($check);
-                  $index = 0;
                   foreach ($permission as $value) {?>
                   <div class="col-sm-3">
-                    <?php 
-                        if($index < $count){
-                            if($check[$index] == $value->id){
-                    ?>
-                    <input type="checkbox" name="permission[]" checked value="<?php echo $value->id;?>">&nbsp;&nbsp;&nbsp;  
-                    <?php
-                            }
-                        }
-                        else{
-                    ?>
-                    <input type="checkbox" name="permission[]" value="<?php echo $value->id;?>">&nbsp;&nbsp;&nbsp; 
-
-                    <?php
-                        }
-                    ?>
-                      
+                    <input type="checkbox" name="permission[]" <?php echo in_array($value->id,$check) ? 'checked' : ''  ?> value="<?php echo $value->id;?>">&nbsp;&nbsp;&nbsp;  
+                
+                    
                     <label for="<?php echo $value->id;?>"><?php echo $value->name;?></label>
                   </div>
                   <?php 
-                    $index++;
-                } ?>
+                } 
+                ?>
                 </div>   
 
 

@@ -69,7 +69,7 @@
                         <select  class="form-control valdation_select select2" name="user_group" id="user_group">   
                                         <option selected="selected">Choose one</option>
                                             <?php foreach($groups as $group) :?>
-                                                <option value="<?php echo $group->id; ?>"><?php echo $group->name; ?></option>
+                                                <option value="<?php echo $group->id; ?>" <?php echo ($group->id == $edit_users->group_id) ? 'selected' : '' ?>><?php echo $group->name; ?></option>
                                             <?php endforeach; ?>
                         </select>
                     </div>
