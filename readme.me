@@ -1,0 +1,114 @@
+# codeigniter 
+// ------------------------------------------------------
+
+// From Arif vai 
+// ------------------------------------------------------
+-- builtin index.php refuse kortahobe refuse code diya... 
+-- view a index.php banata hoba...(https://stackoverflow.com/questions/19183311/codeigniter-removing-index-php-from-url)
+-- model ar controller ar name ar khattra Case amon hoba "Home.php" 
+-- ar view AR khattra case amon hoba "home.php"
+-- base url changing to automatic for any domain
+-- directory structure / boiler plate structure / mastering templete 
+
+
+
+
+// Codeigniter Tutorial in Hindi (How it Works) | Part-3
+// ------------------------------------------------------
+// index.php
+ - Important firstly.
+ - in url what we request all request come to index.php and then other Ex, about.php 
+
+// controller
+    - all controlling functionality will be here.
+    - (url)/index.php/controller_file_name/function_name 
+    - if we use .htaccess and related code, no need builtin index.php : (url)/controller_file_name/function_name 
+    (https://stackoverflow.com/questions/19183311/codeigniter-removing-index-php-from-url)
+
+// model 
+    - database model creation
+
+// view 
+    - all design/html file etc.
+
+
+// Codeigniter Tutorial in Hindi (Controllers) | Part-4
+// ------------------------------------------------------
+ 
+// controller
+    - The Controller acts as the traffic cop, so it is responsible for fetching a particular view. 
+    - Controller is to handle everything that pertains to HTTP requests - redirects, authentication, web safety, encoding, etc. 
+        In short, the controller is where you make sure that people are allowed to be there, and they get the data they need in a format they can use.
+    - At their most basic, controllers and models are simply classes that have a specific job. 
+        They are not the only class types that you can use, obviously, but they make up the core of how this framework is designed to be used. 
+    - A Controller is simply a class file that is named in a way that can be associated with a URI. When a controller’s name matches the first segment of a URI, it will be loaded.
+    
+    - $this-load-view('welcome');       All detail: https://www.youtube.com/watch?v=5PBwbozcW4g&list=PL_HlKez9XCSM6WNO_dHhF3yPKVdY1ZZzB&index=5&ab_channel=TechnicalSuneja
+    - whay $this??? A: onno class ar object arekta jaygay use kora... Here, "CI_Controller" parent class .... "Home" is a child class whitch I created.
+    - 
+
+
+// Codeigniter Tutorial in Hindi (What is Model) | Part-6 
+// -----------------------------------------------------------------------------------
+
+// Model
+    - It is the model how backend deals with database
+    - A model’s job is to maintain a single type of data for the application. 
+        This might be users, blog posts, transactions, etc. In this case, the model’s job has two parts: enforce business rules on the data as it is pulled from,
+    - external api, authentcation model, database file handle,  web service 
+   
+
+// Codeigniter Tutorial in Hindi (What is Views) | Part-7
+// -----------------------------------------------------------------------------------
+
+// Views
+    - A view is simply a web page, or a page fragment, like a header, footer, sidebar, etc. 
+        In fact, views can flexibly be embedded within other views (within other views, etc., etc.) if you need this type of hierarchy.
+    - Views are never called directly, they must be loaded by a controller. 
+    - The Controller acts as the traffic cop, so it is responsible for fetching a particular view. 
+    - $this->load->view('name');
+
+// Codeigniter Tutorial in Hindi (Database) | Part-8
+// ----------------------------------------------------------------------------------
+
+// Database
+    - Creating database and database model for the special working controller file
+    - Database Configuration: checking and adding 'hostname' => 'localhost', 'username' => 'root',  'database' => 'ci_prac', 
+    - loading database with " $this->load->database(); "
+    - In database everyone row works as a single object
+
+
+// Codeigniter Tutorial in Hindi (Active Record Class) | Part-9
+// ----------------------------------------------------------------------------------
+
+// Active Record Class
+    - method chaining(need to know detail)
+      https://www.youtube.com/watch?v=z2v5SkSu3kI&list=PL_HlKez9XCSM6WNO_dHhF3yPKVdY1ZZzB&index=9&ab_channel=TechnicalSuneja
+
+
+
+// Codeigniter Tutorial in Hindi (Libraries) | Part-10
+// ----------------------------------------------------------------------------------
+
+// Libraries
+    - libraries is called classes. where specific working class made properly.
+      https://www.youtube.com/watch?v=7VkIqil0O5c&list=PL_HlKez9XCSM6WNO_dHhF3yPKVdY1ZZzB&index=10&ab_channel=TechnicalSuneja
+
+    - Different Library Reference: https://codeigniter.com/user_guide/libraries/index.html
+ 
+
+
+// Codeigniter Tutorial in Hindi (Helper) | Part-11
+// ----------------------------------------------------------------------------------
+
+// Helper
+    - Random function for work 
+    - https://www.youtube.com/watch?v=bkELEVjo32w&list=PL_HlKez9XCSM6WNO_dHhF3yPKVdY1ZZzB&index=11&ab_channel=TechnicalSuneja
+
+    - Different Helper Reference: https://codeigniter.com/user_guide/helpers/index.html
+
+    - What is the Difference Between Helper and Library in CodeIgniter?
+    A: Helper and Library are two concepts in CodeIgniter. 
+        The main difference between Helper and Library in CodeIgniter is that the Helper is a file with a set of functions in a particular category 
+        and is not written in Object Oriented format, while the Library is a class with a set of functions that allows creating an instance of that class and is written Object Oriented format.
+
