@@ -128,9 +128,9 @@
                                 </label>
                                 <div class="col-sm-8">
                                   <select class="form-control select2" name="country" id="country">
-                                  <option value="<?php if (isset($data[0]->country_id)) { echo $data[0]->country_id; } ?>">Select</option>
+                                  <option value="<?php // if (isset($data[0]->country_id)) { echo $data[0]->country_id; } ?>">Select</option>
                                       <?php foreach ($countries as  $row):?>
-                                        <option value='<?php echo $row->id; ?>'> <?php echo $row->name; ?> </option>
+                                        <option value='<?php echo $row->id; ?>' <?php echo ($row->id == $data[0]->country_id) ? 'selected' : '' ?>> <?php echo $row->name; ?> </option>
                                       <?php endforeach;?>                             
                                   </select>
                                 <!-- span class="validation-color" id="err_country"><?php  ?></span>
@@ -146,11 +146,11 @@
                                 </label>
                                 <div class="col-sm-8">
                                   <select class="form-control select2" name="state" id="state" value="" >
-                                  <option value="<?php if (isset($data[0]->state)) { echo $data[0]->state; }?> ">Select</option>
-                                            <?php foreach ($states as  $row):  ?>
-                                              <option value='<?php echo $row->id; ?>'> <?php echo $row->name;  ?> </option>
-                                            <?php endforeach;?>                                        
-                                    </select>
+                                    <option value="<?php //if (isset($data[0]->state)) { echo $data[0]->state; }?> ">Select</option>
+                                              <?php foreach ($states as  $row):  ?>
+                                                <option value='<?php echo $row->id; ?>' <?php echo ($row->id == $data[0]->state) ? 'selected' : '' ?>> <?php echo $row->name;  ?> </option>
+                                              <?php endforeach;?>                                        
+                                  </select>
                                   <!-- <span class="validation-color" id="err_city"></span>
                                       <p style="color:#990000;"></p> -->
                                 </div>
