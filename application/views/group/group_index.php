@@ -23,7 +23,6 @@
                         <td class="border  text-center">
                             <a class="btn btn-outline-light" href="<?php  echo base_url('groups/view/'.$group['id']); ?>"> View </a>
                             <a class="btn btn-warning " href="<?php  echo base_url('groups/show_edit_form/'.$group['id'] ); ?>"> Edit </a>
-                            <a class="btn btn-danger" href="<?php echo base_url('groups/delete/'.$group['id']); ?>">Delete</a>  
                         </td>
                     </tr>
                     <?php endforeach; endif;?>

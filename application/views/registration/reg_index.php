@@ -70,7 +70,7 @@
                 <div class="col-md-12"> 
                   <div class="text-center">
                     <?php 
-                    if(in_array("Manage_New_Member_Registration",$userPermissions)){
+                    if(in_array("Manage_New_Member",$userPermissions)){
                     ?> 
                     <a class="btn btn-success text-center" href="<?php echo site_url('registrations/show_Reg_Form'); ?>" >New User Registrations</a>  
                     <?php 

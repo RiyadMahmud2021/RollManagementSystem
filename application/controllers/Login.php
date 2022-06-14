@@ -22,7 +22,7 @@
 		$password = sha1($_POST['password']);  // 1 
 		// var_dump($password);
 		// exit;
-		$data = $this->Users_Model->user_login($username, $password);   //2 
+		$data = $this->Users_Model->User_login($username, $password);   //2 
 		// echo "<pre>";
 		// var_dump($data->id);
 		// exit;
