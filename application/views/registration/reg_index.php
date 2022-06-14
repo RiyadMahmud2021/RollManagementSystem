@@ -1,6 +1,7 @@
 <?php 
   $this->load->view('layout/header');
-//   $user_session = $this->session->userdata('userRole');
+    
+    $userPermissions = $this->session->userdata('userPermissions');
   
 //   if(empty($user_session))
 //   {
@@ -68,12 +69,18 @@
               <div class="row">
                 <div class="col-md-12"> 
                   <div class="text-center">
-                      <a class="btn btn-success text-center" href="<?php echo site_url('registrations/show_Reg_Form'); ?>" >New User Registrations</a>  
+                    <?php 
+                    if(in_array("Manage_New_Member_Registration",$userPermissions)){
+                    ?> 
+                    <a class="btn btn-success text-center" href="<?php echo site_url('registrations/show_Reg_Form'); ?>" >New User Registrations</a>  
+                    <?php 
+                    }
+                    ?>
+                      
                   </div>
                 </div>
               </div>        
         </div>  
-
 
     </section>
 

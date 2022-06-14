@@ -2,6 +2,27 @@
   $this->load->view('layout/header');
 ?>
 
+<?php
+         // $user_info=$this->session->userdata('user');
+         $userPermissions = $this->session->userdata('userPermissions');
+         // var_dump($logged_info);
+         // var_dump($user_info);
+         // var_dump($userPermissions);
+ 
+         if(empty($userPermissions)){
+
+              redirect('login','refresh');
+
+         }
+
+        if(!in_array("Company_Setting",$userPermissions)){ 
+
+          redirect('dashboard','refresh');
+
+        }
+         
+?>
+
       <!-- Main content -->
   <section class="content ml-5">
 
@@ -175,7 +196,7 @@
                                 </label>
 
                                 <div class="col-sm-8">
-                                  <input type="file" class="form-control" name="login_logo" id="login_logo"value="<?php //if(isset($data[0]->loginpage_image)){echo $data[0]->loginpage_image; }?>">
+                                  <input type="file" class="form-control" name="login_logo" id="login_logo"value="<?php ($data[0]->loginpage_image)?>">
                                   <!-- <input type="hidden" class="form-control" name="login_image" id="login_image" value="<?php //if(isset($data[0]->loginpage_image)){echo $data[0]->loginpage_image; }?>">  -->
 
                                     <p>Recomended size : 300*120</p>

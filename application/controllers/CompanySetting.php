@@ -9,7 +9,7 @@
 				// echo '<pre>';
 				// var_dump($this->load);
 				// exit; 
-		$logged_info = $this->session->userdata('user');
+		$logged_info = $this->session->userdata('user'); // login restriction 
           $loggedin = $logged_info->id;
 
         if (!isset($loggedin)) { // putting session condition

@@ -3,7 +3,6 @@
 
 <?php 
 
-         $logged_info=$this->session->userdata('loggedIn');
         // $user_info=$this->session->userdata('user');
         // $userPermissions = $this->session->userdata('userPermissions');
         // // var_dump($logged_info);
