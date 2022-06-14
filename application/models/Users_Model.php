@@ -7,6 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			
 		}
 
+		# Login information checking 
 		public function User_login($username, $password){  
 			
 			$sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";

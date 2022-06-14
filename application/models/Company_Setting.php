@@ -2,7 +2,7 @@
 
 
 class Company_Setting extends CI_Model{
-		
+	
   	public function __construct(){
         parent:: __construct();
     }
@@ -20,6 +20,7 @@ class Company_Setting extends CI_Model{
     public function addUpdate($data)
     {       
       $d = $this->db->get('company_settings')->result();
+ 
       if($d != null)
       {
           return $this->db->update('company_settings',$data);

@@ -23,7 +23,7 @@
 		
 		$data['countries']  = $this->Company_Setting->getCountry();
 		$data['states']  = $this->Company_Setting->getState();
-		$data['data']     = $this->Company_Setting->getData();
+		$data['data']  = $this->Company_Setting->getData();
 		// echo '<pre>';
 		// print_r($data);
 		// exit; 
@@ -35,10 +35,10 @@
 
 	public function add_company(){
 			
-			$this->form_validation->set_rules('name','name','required');  
-			$this->form_validation->set_rules('short_name','short_name','required');
-			$this->form_validation->set_rules('email','email','required');  
-			$this->form_validation->set_rules('phone','phone','required');  
+			$this->form_validation->set_rules('name','Name','required');  
+			$this->form_validation->set_rules('short_name','Short_name','required');
+			$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+			$this->form_validation->set_rules('phone','Phone','required');  
 			// $this->form_validation->set_rules('bank_name"','bank_name"','required');  
 			// $this->form_validation->set_rules('ac_no','ac_no','required');  
 			// $this->form_validation->set_rules('gstin','short_name','required');  
@@ -47,7 +47,6 @@
 			// $this->form_validation->set_rules('state','state','required'); 
 			// $this->form_validation->set_rules('zipcode','zipcode','required'); 
 			// $this->form_validation->set_rules('login_logo','country','required'); 
-			// $this->form_validation->set_rules('invoice_logo','country','required'); 
 
 			if ($this->form_validation->run() == true)
 			{
@@ -81,14 +80,15 @@
 				// print_r($data); 
 				// exit();
 				$this->Company_Setting->addUpdate($data);
-
 				redirect('CompanySetting');
+				
 				}
 
 			else   
 				{    
 					
-					echo "no";// $this->session->set_flashdata('fail', 'Failed to add new group.'); 
+					echo "Something is wrong!!!";
+					// $this->session->set_flashdata('fail', 'Failed to add new group.'); 
 					// redirect('registrations');
 				}
 			// 	// $this->session->set_flashdata('Success', 'Successfully added new group.');

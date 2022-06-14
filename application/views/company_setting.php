@@ -8,7 +8,8 @@
          // var_dump($logged_info);
          // var_dump($user_info);
          // var_dump($userPermissions);
- 
+         // exit(); don't give it, its a page not controller
+
          if(empty($userPermissions)){
 
               redirect('login','refresh');
@@ -207,30 +208,13 @@
                                     <?php } ?>
                                 </div>
                               </div> 
-                              
-                              <!-- <div class="form-group">
-                                <label class="col-sm-4 control-label require" for="inputEmail3">
-                                    Invoice Logo
-                                </label>
-
-                                <div class="col-sm-8">
-                                  <input type="file" class="form-control" name="invoice_logo" id="invoice_logo">
-                                  <input type="hidden" class="form-control" name="invoice_image" id="invoice_image" value="<?php //if(isset($data[0]->invoice_image)){echo $data[0]->invoice_image; }?>">
-
-                                    <p>Recomeded size : 300*120</p>
-                                      <p style="color:#990000;"></p> 
-                                    <?php //if(isset($data[0]->invoice_image)){?>  
-                                    <img src="<?php //if(isset($data[0]->invoice_image)){echo $data[0]->invoice_image;}?>" height="50" width="100">
-                                    <?php //} ?>
-                                </div>
-                              </div>     -->
 
                         </div>                        
                       </div>
                   </div>
                     <!-- /.box-body -->
                   <div class="row">  
-                    <div class="col-md-12 text-center">
+                    <div class="col-md-12 text-center pb-2">
                       <!-- <center> -->
                         <input class="btn btn-success btn-flat" type="submit" id="btn" value="Submit" name="btnsubmit" > 
                       <!-- </center>  -->
